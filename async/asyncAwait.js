@@ -26,15 +26,31 @@ function bye(name) {
   })
 }
 
-hi('Owen')
-  .then(talk)
-  .then(talk)
-  .then(talk)
-  .then(bye)
-  .then(name => {
-    console.log(`Finished process, ${name}.`)
-  })
-  .catch(error => {
-    console.log('An error has ocucrred')
+// hi('Owen')
+//   .then(talk)
+//   .then(talk)
+//   .then(talk)
+//   .then(bye)
+//   .then(name => {
+//     console.log(`Finished process, ${name}.`)
+//   })
+//   .catch(error => {
+//     console.log('An error has ocucrred')
+//     console.error(error)
+//   })
+
+async function main() {
+  let name = await hi('Owen')
+  await talk()
+  await talk()
+  await talk()
+  try {
+    await bye(name)
+  } catch (error) {
     console.error(error)
-  })
+  }
+}
+
+console.log('Start')
+main()
+console.log('Finish')
