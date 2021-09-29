@@ -8,6 +8,7 @@ let pokemons = {
     level: 15
   }
 }
+console.time('Time')
 
 console.group('Kind of informative console')
   console.log('Something normal')
@@ -30,3 +31,6 @@ for(let i = 0; i < 3; i++) {
   console.count('Times')
 console.groupEnd('Console.count')
 
+console.timeEnd('Time')
+
+// console.clear()
