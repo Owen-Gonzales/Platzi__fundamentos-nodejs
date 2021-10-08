@@ -6,13 +6,17 @@ const router = (req, res) => {
 
   switch (req.url) {
     case '/hi':
-      res.write("Hi, what's your name")
+      res.write(`Hi, what's your name`)
       res.end()
-      break
+      break;
+    case '/code':
+      res.write(`I'm leaning node yeah`)
+      res.end()
     default:
-      res.write("Error 404: I don't know what you want")
+      res.write(`Error 404: I don't know what you want`)
+      res.end()
+      break;
   }
-
   // res.writeHead('201', {'Content-Type': 'text/plain'})
   // res.write('Hi, I already know how to use htttp')
   // res.end
